@@ -1,5 +1,6 @@
 require 'ally/io'
 require 'ally/io/console/version'
+require 'rainbow/ext/string'
 
 module Ally
   module Io
@@ -13,10 +14,8 @@ module Ally
 
       def listen
         say('How can I help you?')
-        while
-          raw_text = gets.chomp
-          inquiry = Ally::Inquiry.new(raw_text)
-          input(inquiry)
+        loop do
+          input(Ally::Inquiry.new(gets.chomp))
         end
       end
     end
