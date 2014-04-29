@@ -5,7 +5,7 @@ module Ally
   module Io
     class Console
       include Ally::Io
-    
+
       def say(text)
         super # do not delete
         puts text.color(:magenta)
