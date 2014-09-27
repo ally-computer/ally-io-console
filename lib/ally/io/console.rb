@@ -15,7 +15,7 @@ module Ally
       def listen
         say('How can I help you?')
         loop do
-          input(Ally::Inquiry.new(gets.chomp))
+          input(Ally::Inquiry.new(STDIN.gets.chomp))
         end
       end
     end
