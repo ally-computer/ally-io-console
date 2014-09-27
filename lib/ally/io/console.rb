@@ -13,8 +13,9 @@ module Ally
       end
 
       def listen
-        say('How can I help you?')
+        say('How can I help you? (to quit, enter "quit"')
         loop do
+          break if %w(quit exit).include?(STDIN.gets.chomp.downcase)
           input(Ally::Inquiry.new(STDIN.gets.chomp))
         end
       end
